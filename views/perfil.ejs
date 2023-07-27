@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Perfil</title>
+  <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+  <h1>Informações do Usuário</h1>
+  <p>Nome: <%= user.nome %></p>
+  <p>E-mail: <%= user.email %></p>
+
+  <form action="/atualizar" method="post">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" value="<%= user.nome %>">
+    <br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" value="<%= user.email %>">
+    <br>
+
+    <label for="senha">Senha:</label>
+    <input type="password" id="senha" name="senha" value="<%= user.senha %>">
+    <br>
+
+    <!-- Adicione os campos restantes do formulário, como avatar e data de nascimento -->
+
+    <button type="submit">Atualizar Perfil</button>
+  </form>
+
+  <form id="formDesativar" action="/api/desativar" method="post">
+    <button type="button" onclick="confirmarDesativarConta()">Desativar Conta</button>
+  </form>
+
+  <form action="/home" method="get">
+    <button type="submit">Voltar para Home</button>
+  </form>
+  
+  <form action="/logout" method="post">
+    <button type="submit">Sair</button>
+  </form>
+
+
+  <script>
+    function confirmarDesativarConta() {
+      if (confirm('Tem certeza que deseja desativar sua conta? Essa ação não pode ser desfeita.')) {
+        document.getElementById('formDesativar').submit();
+      }
+    }
+  </script>
+</body>
+</html>

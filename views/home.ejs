@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home</title>
+  <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+  <h1>Bem-vindo à página Home</h1>
+ 
+
+  <img src="<%= avatar %>" alt="Avatar do usuário" class="avatar-image">
+  <p>Faltam <%= diasFaltantes %> dias e <%= mesesFaltantes %> meses para o seu aniversário!</p>
+
+  <form action="/perfil" method="get">
+    <button type="submit">Ir para o Perfil</button>
+  </form>
+
+  <form action="/logout" method="post">
+    <button type="submit">Sair</button>
+  </form>
+</body>
+</html>
